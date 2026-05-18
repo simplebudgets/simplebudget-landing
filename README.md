@@ -1,4 +1,8 @@
-# simpleBudget Marketing Site
+<p align="center">
+<img width="250" height="250" alt="logo" src="https://github.com/user-attachments/assets/57426cb2-3e99-45ba-918c-8d79126c6571" />
+</p>
+
+# simpleBudget Landing Site
 
 Static marketing site built with [Astro](https://astro.build).
 
@@ -24,14 +28,3 @@ npm run dev
 npm run build    # outputs to dist/
 npm run preview  # preview the build locally
 ```
-
-### Vercel Setup
-
-If deploying alongside the main app:
-- Marketing site: root domain (`simplebudget.tech`) → this project
-- App: subdomain (`app.simplebudget.tech`) → the Vite SPA
-
-In Vercel, create a separate project pointing to the `marketing/` directory with:
-- Build command: `npm run build`
-- Output directory: `dist`
-- Install command: `npm install`
