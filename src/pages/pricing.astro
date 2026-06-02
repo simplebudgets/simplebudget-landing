@@ -2,49 +2,92 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Pricing — simpleBudget" description="Simple pricing for simple budgeting. Start free, upgrade when you're ready.">
+<Base title="Pricing — simpleSuite" description="Simple pricing for simple tools. Start free, upgrade when you're ready.">
   <section class="pricing-hero">
     <h1>Simple pricing, no surprises</h1>
-    <p>Start free. Upgrade when you need more.</p>
+    <p>Every app starts free. Upgrade when you need more.</p>
   </section>
 
-  <section class="pricing-grid">
-    <div class="plan-card">
-      <div class="plan-header">
-        <h3>Free</h3>
-        <div class="plan-price">
-          <span class="price">$0</span>
-          <span class="period">/month</span>
+  <section class="product-pricing">
+    <h2>💰 simpleBudget</h2>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Free</h3>
+          <div class="plan-price">
+            <span class="price">$0</span>
+            <span class="period">/month</span>
+          </div>
         </div>
+        <ul class="plan-features">
+          <li>1 budget</li>
+          <li>Unlimited sections & categories</li>
+          <li>Unlimited transactions</li>
+          <li>Share budgets with others</li>
+          <li>Copy budget outlines month-to-month</li>
+          <li>Basic analytics</li>
+          <li>PWA — install on any device</li>
+        </ul>
+        <a href="https://budget.simplesuite.dev" class="btn btn-secondary btn-large plan-cta">Get Started</a>
       </div>
-      <ul class="plan-features">
-        <li>1 budget</li>
-        <li>Unlimited sections & categories</li>
-        <li>Unlimited transactions</li>
-        <li>Share budgets with others</li>
-        <li>Copy budget outlines month-to-month</li>
-        <li>Basic analytics</li>
-        <li>PWA — install on any device</li>
-      </ul>
-      <a href="https://app.simplebudget.com/signup" class="btn btn-secondary btn-large plan-cta">Get Started</a>
-    </div>
 
-    <div class="plan-card featured">
-      <div class="plan-badge">Most Popular</div>
-      <div class="plan-header">
-        <h3>Pro</h3>
-        <div class="plan-price">
-          <span class="price">$4</span>
-          <span class="period">/month</span>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-header">
+          <h3>Pro</h3>
+          <div class="plan-price">
+            <span class="price">$4</span>
+            <span class="period">/month</span>
+          </div>
         </div>
+        <ul class="plan-features">
+          <li>Unlimited budgets</li>
+          <li>Export to CSV</li>
+          <li>Advanced analytics</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large plan-cta">Start Free Trial</a>
       </div>
-      <ul class="plan-features">
-        <li>Unlimited budgets</li>
-        <li>Export to CSV</li>
-        <li>Advanced analytics</li>
-        <li>Priority support</li>
-      </ul>
-      <a href="https://app.simplebudget.com/signup" class="btn btn-primary btn-large plan-cta">Start Free Trial</a>
+    </div>
+  </section>
+
+  <section class="product-pricing">
+    <h2>⏱️ simpleTracker</h2>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-header">
+          <h3>Free</h3>
+          <div class="plan-price">
+            <span class="price">$0</span>
+            <span class="period">/month</span>
+          </div>
+        </div>
+        <ul class="plan-features">
+          <li>Unlimited time entries</li>
+          <li>Up to 3 projects</li>
+          <li>Weekly summaries</li>
+          <li>PWA — install on any device</li>
+        </ul>
+        <a href="https://tracker.simplesuite.dev" class="btn btn-secondary btn-large plan-cta">Get Started</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge">Pro</div>
+        <div class="plan-header">
+          <h3>Pro</h3>
+          <div class="plan-price">
+            <span class="price">$4</span>
+            <span class="period">/month</span>
+          </div>
+        </div>
+        <ul class="plan-features">
+          <li>Unlimited projects</li>
+          <li>Export to CSV</li>
+          <li>Advanced reports & analytics</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large plan-cta">Start Free Trial</a>
+      </div>
     </div>
   </section>
 
@@ -57,15 +100,19 @@ import Base from '../layouts/Base.astro';
       </div>
       <div class="faq-item">
         <h4>Is there a free trial?</h4>
-        <p>Pro comes with a 14-day free trial. No credit card required to start.</p>
+        <p>Pro comes with a 14-day free trial on every app. No credit card required to start.</p>
       </div>
       <div class="faq-item">
         <h4>What happens to my data if I downgrade?</h4>
-        <p>Your data is never deleted. You'll keep read access to all budgets but can only edit your primary one.</p>
+        <p>Your data is never deleted. You'll keep read access to everything but some features may be limited on the free plan.</p>
       </div>
       <div class="faq-item">
         <h4>Do you offer annual billing?</h4>
-        <p>Yes — $36/year (save 25%). You can switch to annual from your settings at any time.</p>
+        <p>Yes — annual plans save 25%. You can switch to annual from your settings at any time.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is there a bundle discount?</h4>
+        <p>Not yet — each app is priced and billed independently. We may offer bundle pricing as the suite grows.</p>
       </div>
     </div>
   </section>
@@ -88,13 +135,21 @@ import Base from '../layouts/Base.astro';
     font-size: 1.15rem;
   }
 
+  .product-pricing {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .product-pricing h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 750px;
-    margin: 0 auto;
-    padding-bottom: 4rem;
   }
 
   .plan-card {
@@ -192,7 +247,7 @@ import Base from '../layouts/Base.astro';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
   }
 

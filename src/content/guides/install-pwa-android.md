@@ -1,6 +1,7 @@
 ---
 title: Install simpleBudget on Android
 description: Add simpleBudget to your home screen for a native app experience on Android.
+product: simplebudget
 category: install
 order: 2
 ---

@@ -1,6 +1,7 @@
 ---
 title: Copying a Budget to a New Month
 description: Carry your budget structure forward without re-entering everything each month.
+product: simplebudget
 category: features
 order: 3
 ---

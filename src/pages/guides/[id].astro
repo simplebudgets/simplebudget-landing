@@ -14,9 +14,10 @@ const { guide } = Astro.props;
 const { Content } = await render(guide);
 ---
 
-<Base title={`${guide.data.title} — simpleBudget`} description={guide.data.description}>
+<Base title={`${guide.data.title} — simpleSuite`} description={guide.data.description}>
   <article class="guide">
     <a href="/guides" class="back-link">← All Guides</a>
+    <span class="guide-product">{guide.data.product === 'simplebudget' ? '💰 simpleBudget' : guide.data.product === 'simpletracker' ? '⏱️ simpleTracker' : '📚 General'}</span>
     <h1>{guide.data.title}</h1>
     <div class="guide-content">
       <Content />
@@ -40,6 +41,16 @@ const { Content } = await render(guide);
 
   .back-link:hover {
     color: var(--color-primary);
+  }
+
+  .guide-product {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
   }
 
   .guide h1 {

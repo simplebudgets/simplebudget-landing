@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = "A simple, beautiful budgeting app that helps you take control of your money.",
+  description = "Simple, beautiful tools to manage your money and your time. simpleBudget and simpleTracker — part of the simpleSuite family.",
 } = Astro.props;
 ---
 
@@ -28,21 +28,36 @@ const {
         <a href="/" class="logo"
           ><Image
             src={logo}
-            alt="simpleBudget logo"
+            alt="simpleSuite logo"
             width={32}
             height={32}
-          /><span>simple<strong>Budget</strong></span></a
+          /><span>simple<strong>Suite</strong></span></a
         >
         <div class="nav-links">
-          <a href="/guides">Guides</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Products <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="https://budget.simplesuite.dev" role="menuitem">
+                <strong>simpleBudget</strong>
+                <span>Budgeting made simple</span>
+              </a>
+              <a href="https://tracker.simplesuite.dev" role="menuitem">
+                <strong>simpleTracker</strong>
+                <span>Time tracking made simple</span>
+              </a>
+            </div>
+          </div>
           <a href="/pricing">Pricing</a>
+          <a href="/guides">Guides</a>
           <a href="/about">About</a>
           <a
-            href="https://github.com/simplebudgets/simplebudget"
+            href="https://github.com/simplesuite"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-github"
-            aria-label="GitHub repository"
+            aria-label="GitHub"
           >
             <svg
               width="20"
@@ -55,13 +70,6 @@ const {
               ></path></svg
             >
           </a>
-          <a
-            href="https://app.simplebudget.tech/login"
-            class="btn btn-secondary">Log In</a
-          >
-          <a href="https://app.simplebudget.tech/signup" class="btn btn-primary"
-            >Sign Up Free</a
-          >
         </div>
       </nav>
     </header>
@@ -76,17 +84,20 @@ const {
           <a href="/" class="logo"
             ><Image
               src={logo}
-              alt="simpleBudget logo"
+              alt="simpleSuite logo"
               width={28}
               height={28}
-            /><span>simple<strong>Budget</strong></span></a
+            /><span>simple<strong>Suite</strong></span></a
           >
-          <p>
-            Take control of your money with a budget that's actually simple.
-          </p>
+          <p>Simple tools for everyday life.</p>
         </div>
         <div class="footer-col">
-          <h4>Product</h4>
+          <h4>Products</h4>
+          <a href="https://budget.simplesuite.dev">simpleBudget</a>
+          <a href="https://tracker.simplesuite.dev">simpleTracker</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
           <a href="/guides">Guides</a>
           <a href="/pricing">Pricing</a>
           <a href="/about">About</a>
@@ -99,7 +110,7 @@ const {
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} simpleBudget. All rights reserved.
+          &copy; {new Date().getFullYear()} simpleSuite. All rights reserved.
         </p>
       </div>
     </footer>
@@ -181,18 +192,94 @@ const {
     gap: 1.5rem;
   }
 
-  .nav-links a {
+  .nav-links > a {
     color: var(--color-text-muted);
     transition: color 0.2s;
   }
 
-  .nav-links a:hover {
+  .nav-links > a:hover {
     color: var(--color-text);
   }
 
   .nav-github {
     display: flex;
     align-items: center;
+  }
+
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-trigger {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s;
+  }
+
+  .nav-dropdown-trigger:hover {
+    color: var(--color-text);
+  }
+
+  .nav-dropdown-trigger svg {
+    transition: transform 0.2s;
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    min-width: 220px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s, transform 0.15s;
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+
+  .nav-dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-dropdown-menu a strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .nav-dropdown-menu a span {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
   }
 
   .btn {
@@ -251,7 +338,7 @@ const {
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 2rem;
   }
 
@@ -300,14 +387,22 @@ const {
     }
 
     .footer-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
   }
 
   @media (max-width: 480px) {
-    .nav-links a:not(.btn) {
+    .nav-links > a:not(.btn):not(.nav-github) {
       display: none;
+    }
+
+    .nav-dropdown {
+      display: none;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

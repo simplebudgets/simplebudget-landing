@@ -1,6 +1,7 @@
 ---
 title: Sharing a Budget
 description: Share your budget with a partner, spouse, or roommate so everyone stays on the same page.
+product: simplebudget
 category: features
 order: 1
 ---

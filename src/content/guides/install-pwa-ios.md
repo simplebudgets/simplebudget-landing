@@ -1,6 +1,7 @@
 ---
 title: Install simpleBudget on iPhone or iPad
 description: Add simpleBudget to your home screen for a native app experience on iOS.
+product: simplebudget
 category: install
 order: 1
 ---

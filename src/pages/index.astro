@@ -2,76 +2,86 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="simpleBudget — Budgeting Made Simple">
+<Base title="simpleSuite — Simple Tools for Everyday Life">
   <section class="hero">
-    <h1>Budgeting that gets<br />out of your way</h1>
+    <h1>Simple tools for<br />everyday life</h1>
     <p class="hero-sub">
-      Plan your month, track your spending, and see where your money goes — all in one clean interface. No spreadsheets, no complexity.
+      A growing suite of apps designed to do one thing well — and stay out of your way. Manage your money. Track your time. More to come.
     </p>
     <div class="hero-cta">
-      <a href="https://app.simplebudget.com/signup" class="btn btn-primary btn-large">Start for Free</a>
+      <a href="#products" class="btn btn-primary btn-large">Explore Products</a>
       <a href="/pricing" class="btn btn-secondary btn-large">See Pricing</a>
     </div>
   </section>
 
-  <section class="features">
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <h3>Plan Your Budget</h3>
-      <p>Set up income and expense categories in seconds. Use our starter template or build your own from scratch.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💸</div>
-      <h3>Track Transactions</h3>
-      <p>Log expenses and income as they happen. See exactly how much you have left in each category.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">👥</div>
-      <h3>Share with a Partner</h3>
-      <p>Share budgets with your spouse or roommate. Everyone stays on the same page.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>See the Big Picture</h3>
-      <p>Visual analytics show your spending patterns over time. Know where your money actually goes.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📱</div>
-      <h3>Works Everywhere</h3>
-      <p>Install as a PWA on your phone or use it in any browser. Your budget is always with you.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔒</div>
-      <h3>Private & Secure</h3>
-      <p>Your financial data is never sold or shared. We make money from subscriptions, not your data.</p>
+  <section class="products" id="products">
+    <h2>The Suite</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon">💰</div>
+        <h3>simpleBudget</h3>
+        <p class="product-tagline">Budgeting made simple</p>
+        <p>Plan your month, track your spending, and see where your money goes — all in one clean interface. No spreadsheets, no complexity.</p>
+        <ul class="product-highlights">
+          <li>Plan income & expenses by category</li>
+          <li>Track transactions in real time</li>
+          <li>Share budgets with a partner</li>
+          <li>Visual spending analytics</li>
+          <li>Works offline as a PWA</li>
+        </ul>
+        <a href="https://budget.simplesuite.dev" class="btn btn-primary">Open simpleBudget →</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">⏱️</div>
+        <h3>simpleTracker</h3>
+        <p class="product-tagline">Time tracking made simple</p>
+        <p>Track how you spend your time across projects and tasks. Stay focused, review your week, and understand where the hours go.</p>
+        <ul class="product-highlights">
+          <li>One-click time tracking</li>
+          <li>Organize by project & task</li>
+          <li>Weekly & monthly summaries</li>
+          <li>Simple reports & exports</li>
+          <li>Works offline as a PWA</li>
+        </ul>
+        <a href="https://tracker.simplesuite.dev" class="btn btn-primary">Open simpleTracker →</a>
+      </div>
     </div>
   </section>
 
-  <section class="how-it-works">
-    <h2>Up and running in 2 minutes</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-number">1</span>
-        <h3>Create your budget</h3>
-        <p>Name it, pick a template (or start blank), and you're ready to go.</p>
+  <section class="values">
+    <h2>What every simpleSuite app shares</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>One job, done well</h3>
+        <p>Each app solves one problem without feature creep. If it doesn't earn its place, it doesn't ship.</p>
       </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <h3>Set your amounts</h3>
-        <p>Assign dollar amounts to each category. See your planned income vs. expenses at a glance.</p>
+      <div class="value-card">
+        <div class="value-icon">📱</div>
+        <h3>Works everywhere</h3>
+        <p>Install as a PWA on any device or use in any browser. Your data is always with you — even offline.</p>
       </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <h3>Track as you spend</h3>
-        <p>Add transactions throughout the month. Watch your remaining balances update in real time.</p>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Private & secure</h3>
+        <p>Your data is never sold or shared. We make money from subscriptions, not from you.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Fast & lightweight</h3>
+        <p>No bloat. Each app loads fast, runs smooth, and respects your time.</p>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
-    <h2>Ready to take control?</h2>
-    <p>Join thousands of people who budget the simple way.</p>
-    <a href="https://app.simplebudget.com/signup" class="btn btn-primary btn-large">Get Started — It's Free</a>
+    <h2>Ready to simplify?</h2>
+    <p>Pick a tool and get started in under 2 minutes. Free plans available for everything.</p>
+    <div class="cta-buttons">
+      <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large">Try simpleBudget</a>
+      <a href="https://tracker.simplesuite.dev" class="btn btn-secondary btn-large">Try simpleTracker</a>
+    </div>
   </section>
 </Base>
 
@@ -92,7 +102,7 @@ import Base from '../layouts/Base.astro';
     margin-top: 1.25rem;
     font-size: 1.2rem;
     color: var(--color-text-muted);
-    max-width: 560px;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -105,14 +115,102 @@ import Base from '../layouts/Base.astro';
     flex-wrap: wrap;
   }
 
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+  .products {
     padding: 4rem 0;
   }
 
-  .feature-card {
+  .products h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .product-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-tagline {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .product-card > p:not(.product-tagline) {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .product-highlights {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .product-highlights li {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .product-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .product-card .btn {
+    text-align: center;
+    align-self: flex-start;
+  }
+
+  .values {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .values h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .value-card {
     background: var(--color-surface);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius);
@@ -120,68 +218,21 @@ import Base from '../layouts/Base.astro';
     transition: border-color 0.2s;
   }
 
-  .feature-card:hover {
+  .value-card:hover {
     border-color: rgba(255, 255, 255, 0.12);
   }
 
-  .feature-icon {
+  .value-icon {
     font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }
 
-  .feature-card h3 {
+  .value-card h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
 
-  .feature-card p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-  }
-
-  .how-it-works {
-    padding: 4rem 0;
-    text-align: center;
-  }
-
-  .how-it-works h2 {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    text-align: left;
-  }
-
-  .step {
-    position: relative;
-    padding-left: 3.5rem;
-  }
-
-  .step-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: var(--color-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1rem;
-  }
-
-  .step h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .step p {
+  .value-card p {
     color: var(--color-text-muted);
     font-size: 0.95rem;
   }
@@ -202,5 +253,12 @@ import Base from '../layouts/Base.astro';
     color: var(--color-text-muted);
     font-size: 1.1rem;
     margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 </style>

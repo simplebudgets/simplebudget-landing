@@ -6,6 +6,7 @@ const guides = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
+        product: z.enum(['simplebudget', 'simpletracker', 'general']).default('simplebudget'),
         category: z.enum(['getting-started', 'features', 'install']),
         order: z.number(),
     }),
