@@ -1,6 +1,7 @@
 ---
 title: Adding Sections & Categories
 description: Organize your budget with sections (groups) and categories (line items).
+product: simplebudget
 category: features
 order: 2
 ---

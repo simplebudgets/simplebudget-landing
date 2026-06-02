@@ -18,25 +18,28 @@ const grouped = categories.map(cat => ({
 }));
 ---
 
-<Base title="Guides — simpleBudget" description="Learn how to get the most out of simpleBudget with step-by-step guides.">
+<Base title="Guides — simpleSuite" description="Learn how to get the most out of simpleSuite apps with step-by-step guides.">
   <section class="guides-hero">
     <h1>Guides</h1>
-    <p>Step-by-step help for everything in simpleBudget.</p>
+    <p>Step-by-step help for all simpleSuite apps.</p>
   </section>
 
   <section class="guides-list">
     {grouped.map(group => (
-      <div class="guide-group">
-        <h2>{group.label}</h2>
-        <div class="guide-cards">
-          {group.guides.map(guide => (
-            <a href={`/guides/${guide.id}`} class="guide-card">
-              <h3>{guide.data.title}</h3>
-              <p>{guide.data.description}</p>
-            </a>
-          ))}
+      group.guides.length > 0 && (
+        <div class="guide-group">
+          <h2>{group.label}</h2>
+          <div class="guide-cards">
+            {group.guides.map(guide => (
+              <a href={`/guides/${guide.id}`} class="guide-card">
+                <span class="guide-product">{guide.data.product === 'simplebudget' ? '💰 simpleBudget' : guide.data.product === 'simpletracker' ? '⏱️ simpleTracker' : '📚 General'}</span>
+                <h3>{guide.data.title}</h3>
+                <p>{guide.data.description}</p>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )
     ))}
   </section>
 </Base>
@@ -92,6 +95,16 @@ const grouped = categories.map(cat => ({
   .guide-card:hover {
     border-color: var(--color-primary);
     transform: translateY(-2px);
+  }
+
+  .guide-product {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 0.5rem;
   }
 
   .guide-card h3 {

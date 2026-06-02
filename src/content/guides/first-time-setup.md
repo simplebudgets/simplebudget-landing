@@ -1,6 +1,7 @@
 ---
 title: First Time Setup
 description: Create your account and set up your first budget in under 2 minutes.
+product: simplebudget
 category: getting-started
 order: 1
 ---

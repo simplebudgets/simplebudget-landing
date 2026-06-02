@@ -2,43 +2,49 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="About — simpleBudget" description="The story behind simpleBudget and why we built it.">
+<Base title="About — simpleSuite" description="The story behind simpleSuite and why we build simple tools.">
   <section class="about-hero">
-    <h1>Built for people who hate budgeting</h1>
+    <h1>Built for people who want less, not more</h1>
     <p class="about-sub">
-      Most budgeting apps are either too complex or too rigid. We built simpleBudget because we wanted something that takes 2 minutes to set up and stays out of your way the rest of the month.
+      Most productivity tools try to do everything. We build tools that do one thing really well — then get out of your way.
     </p>
   </section>
 
   <section class="values">
     <div class="value-card">
       <h3>Simple by design</h3>
-      <p>Every feature earns its place. If it adds complexity without clear value, it doesn't ship. Your budget should be a tool, not a project.</p>
+      <p>Every feature earns its place. If it adds complexity without clear value, it doesn't ship. Your tools should help you, not become a project themselves.</p>
     </div>
     <div class="value-card">
       <h3>Privacy first</h3>
-      <p>We don't sell data, run ads, or partner with financial institutions. Your money info stays between you and your budget.</p>
+      <p>We don't sell data, run ads, or partner with third parties who want your info. Your data stays between you and the app.</p>
     </div>
     <div class="value-card">
       <h3>Works offline</h3>
-      <p>As a PWA, simpleBudget works even when your connection doesn't. Log a transaction on the subway and it syncs when you're back online.</p>
+      <p>Every simpleSuite app works as a PWA — even when your connection doesn't. Log data on the go and it syncs when you're back online.</p>
     </div>
   </section>
 
   <section class="story">
     <h2>The short version</h2>
     <p>
-      simpleBudget started as a personal project — a weekend build to replace a spreadsheet that had gotten out of hand. Turns out a lot of people had the same spreadsheet problem.
+      simpleSuite started with simpleBudget — a weekend project to replace a spreadsheet that got out of hand. Turns out a lot of people had the same problem: they wanted simple tools that just work.
     </p>
     <p>
-      Today it's used by thousands of people who want to know where their money goes without spending an hour a week on it. We keep it lean, fast, and focused.
+      So we kept building. simpleTracker came next for notes, tasks, and projects. The philosophy is the same across every app: lean, fast, focused.
+    </p>
+    <p>
+      Today, thousands of people use simpleSuite apps to manage their money and stay on top of their tasks without spending hours fiddling with settings or learning complex features.
     </p>
   </section>
 
   <section class="cta-section">
     <h2>Try it yourself</h2>
     <p>Free to start, no credit card required.</p>
-    <a href="https://app.simplebudget.com/signup" class="btn btn-primary btn-large">Create Your Budget</a>
+    <div class="cta-buttons">
+      <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large">Open simpleBudget</a>
+      <a href="https://tracker.simplesuite.dev" class="btn btn-secondary btn-large">Open simpleTracker</a>
+    </div>
   </section>
 </Base>
 
@@ -120,5 +126,12 @@ import Base from '../layouts/Base.astro';
     color: var(--color-text-muted);
     font-size: 1.1rem;
     margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 </style>

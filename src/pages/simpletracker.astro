@@ -1,0 +1,418 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="simpleTracker — Notes, Tasks & Projects Made Simple" description="Manage notes with Markdown, track tasks with subtasks and due dates, and organize everything into projects. Offline-first and mobile-ready.">
+  <section class="product-hero">
+    <div class="product-icon">📝</div>
+    <h1>Notes, tasks & projects<br />without the bloat</h1>
+    <p class="hero-sub">
+      A simple, mobile-first productivity app for managing notes, tasks, and projects. Full offline support, Markdown editing, and real-time sharing.
+    </p>
+    <div class="hero-cta">
+      <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large">Open simpleTracker</a>
+      <a href="https://github.com/simplesuite/simpletracker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Everything you need to stay organized</h2>
+
+    <div class="feature-section">
+      <h3 class="feature-section-title">📒 Notes</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Markdown Editing</h4>
+          <p>Write notes with full Markdown support — live preview, formatting toolbar, and clean rendering. Great for meeting notes, documentation, or quick thoughts.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Two Note Types</h4>
+          <p>Choose between freeform text notes (Markdown) or list notes (checklists). Use whichever fits the content.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Pin & Archive</h4>
+          <p>Pin important notes to the top for quick access. Archive old notes to keep your workspace clean without losing anything.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Share Notes</h4>
+          <p>Share individual notes with other users. Changes sync in real time via Supabase — no manual sending required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-section">
+      <h3 class="feature-section-title">✅ Tasks</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Subtasks</h4>
+          <p>Break tasks down into up to 50 subtasks. Track progress at the subtask level and mark them off as you go.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Due Dates & Indicators</h4>
+          <p>Set due dates and see at a glance what's overdue, due today, or due tomorrow. Never miss a deadline.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Recurring Tasks</h4>
+          <p>Set tasks to repeat on configurable intervals — every N days, weeks, or months. Anchor recurrence to the due date or completion date.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Search & Filter</h4>
+          <p>Quickly find tasks across all projects with search. Filter by status to focus on what matters right now.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-section">
+      <h3 class="feature-section-title">📂 Projects</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Group Everything Together</h4>
+          <p>Organize related notes and tasks into projects. Keep work, personal, and side-project items separate and tidy.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Share Projects</h4>
+          <p>Share entire projects with collaborators. All notes and tasks within a shared project stay synced in real time.</p>
+        </div>
+        <div class="feature-card">
+          <h4>QR Code Sharing</h4>
+          <p>Exchange user IDs via QR code scanning — no need to type email addresses. Point, scan, share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offline-section">
+    <h2>Offline-first, for real</h2>
+    <p class="section-sub">simpleTracker doesn't just cache a page — it has a full offline architecture.</p>
+    <div class="offline-grid">
+      <div class="offline-card">
+        <h4>IndexedDB Mutation Queue</h4>
+        <p>All changes are saved locally first, then synced in the background. If you're offline, they queue up and sync automatically when connectivity returns.</p>
+      </div>
+      <div class="offline-card">
+        <h4>Lie-fi Detection</h4>
+        <p>Goes beyond <code>navigator.onLine</code> — pings the backend to verify real connectivity. No false positives on flaky connections.</p>
+      </div>
+      <div class="offline-card">
+        <h4>Smart Sync Triggers</h4>
+        <p>Syncs on browser online event, 30-second heartbeat, and app visibility change (when you switch back to the app on mobile).</p>
+      </div>
+      <div class="offline-card">
+        <h4>Local Cache with LRU</h4>
+        <p>localStorage cache with 50 MB limit and LRU eviction keeps your most-used data available instantly on launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="extra-features">
+    <h2>Plus everything else you'd expect</h2>
+    <div class="extras-grid">
+      <div class="extra-item">
+        <span class="extra-icon">🔔</span>
+        <div>
+          <h4>Notifications</h4>
+          <p>Daily browser notifications for due and overdue tasks. Once-per-day throttling keeps it helpful, not spammy.</p>
+        </div>
+      </div>
+      <div class="extra-item">
+        <span class="extra-icon">📱</span>
+        <div>
+          <h4>PWA</h4>
+          <p>Install on iOS and Android home screens. Service worker caches assets for instant load. Auto-update prompts keep you current.</p>
+        </div>
+      </div>
+      <div class="extra-item">
+        <span class="extra-icon">🌓</span>
+        <div>
+          <h4>Dark & Light Themes</h4>
+          <p>Switch between themes based on your preference. Looks great at any time of day.</p>
+        </div>
+      </div>
+      <div class="extra-item">
+        <span class="extra-icon">📤</span>
+        <div>
+          <h4>CSV Export</h4>
+          <p>Export your data anytime. Your notes and tasks belong to you.</p>
+        </div>
+      </div>
+      <div class="extra-item">
+        <span class="extra-icon">🔧</span>
+        <div>
+          <h4>Self-Hostable</h4>
+          <p>Configurable Supabase backend — use ours, or point it at your own instance. Global config, per-user override, or env vars.</p>
+        </div>
+      </div>
+      <div class="extra-item">
+        <span class="extra-icon">🔒</span>
+        <div>
+          <h4>Private & Secure</h4>
+          <p>Row-level security in Supabase. Only you (and people you share with) can see your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section">
+    <h2>Built with modern tools</h2>
+    <div class="tech-grid">
+      <span class="tech-badge">React 19</span>
+      <span class="tech-badge">TypeScript</span>
+      <span class="tech-badge">Vite 8</span>
+      <span class="tech-badge">MUI 7</span>
+      <span class="tech-badge">Zustand 5</span>
+      <span class="tech-badge">Supabase</span>
+      <span class="tech-badge">Workbox PWA</span>
+      <span class="tech-badge">IndexedDB</span>
+      <span class="tech-badge">react-markdown</span>
+      <span class="tech-badge">Recharts</span>
+    </div>
+    <p class="tech-note">Open source under AGPL-3.0. Self-host it or use the hosted version.</p>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to get organized?</h2>
+    <p>Free to start, no credit card required.</p>
+    <div class="cta-buttons">
+      <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large">Open simpleTracker</a>
+      <a href="/pricing" class="btn btn-secondary btn-large">See Pricing</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 5rem 0 4rem;
+  }
+
+  .product-hero .product-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 {
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    margin-top: 1.25rem;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .features {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .features > h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .feature-section {
+    margin-bottom: 3rem;
+  }
+
+  .feature-section-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .feature-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .feature-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .feature-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .offline-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .offline-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .offline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .offline-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .offline-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .offline-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .offline-card code {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+
+  .extra-features {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .extra-features h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .extra-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .extra-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .extra-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .extra-item p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tech-section {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .tech-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-badge {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .tech-note {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-section p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
