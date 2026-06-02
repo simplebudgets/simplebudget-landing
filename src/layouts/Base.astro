@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = "Simple, beautiful tools to manage your money and your time. simpleBudget and simpleTracker — part of the simpleSuite family.",
+  description = "Simple, beautiful tools to manage your money and your tasks. simpleBudget and simpleTracker — part of the simpleSuite family.",
 } = Astro.props;
 ---
 
@@ -39,13 +39,13 @@ const {
               Products <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
             </button>
             <div class="nav-dropdown-menu" role="menu">
-              <a href="https://budget.simplesuite.dev" role="menuitem">
+              <a href="/simplebudget" role="menuitem">
                 <strong>simpleBudget</strong>
                 <span>Budgeting made simple</span>
               </a>
-              <a href="https://tracker.simplesuite.dev" role="menuitem">
+              <a href="/simpletracker" role="menuitem">
                 <strong>simpleTracker</strong>
-                <span>Time tracking made simple</span>
+                <span>Notes, tasks & projects made simple</span>
               </a>
             </div>
           </div>
@@ -93,8 +93,8 @@ const {
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="https://budget.simplesuite.dev">simpleBudget</a>
-          <a href="https://tracker.simplesuite.dev">simpleTracker</a>
+          <a href="/simplebudget">simpleBudget</a>
+          <a href="/simpletracker">simpleTracker</a>
         </div>
         <div class="footer-col">
           <h4>Resources</h4>
