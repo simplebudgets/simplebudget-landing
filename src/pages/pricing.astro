@@ -1,15 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import budgetLogo from "../assets/simplebudget.png";
+import trackerLogo from "../assets/simpleTracker.png";
 ---
 
-<Base title="Pricing — simpleSuite" description="Simple pricing for simple tools. Start free, upgrade when you're ready.">
+<Base
+  title="Pricing — simpleSuite"
+  description="Simple pricing for simple tools. Start free, upgrade when you're ready."
+>
   <section class="pricing-hero">
     <h1>Simple pricing, no surprises</h1>
     <p>Every app starts free. Upgrade when you need more.</p>
   </section>
 
   <section class="product-pricing">
-    <h2>💰 simpleBudget</h2>
+    <h2 class="product-pricing-title">
+      <Image
+        src={budgetLogo}
+        alt="simpleBudget logo"
+        width={32}
+        height={32}
+        class="pricing-logo"
+      /><span>simple<strong>Budget</strong></span>
+    </h2>
     <div class="pricing-grid">
       <div class="plan-card">
         <div class="plan-header">
@@ -28,7 +42,10 @@ import Base from '../layouts/Base.astro';
           <li>Basic analytics</li>
           <li>PWA — install on any device</li>
         </ul>
-        <a href="https://budget.simplesuite.dev" class="btn btn-secondary btn-large plan-cta">Get Started</a>
+        <a
+          href="https://budget.simplesuite.dev"
+          class="btn btn-secondary btn-large plan-cta">Get Started</a
+        >
       </div>
 
       <div class="plan-card featured">
@@ -46,13 +63,24 @@ import Base from '../layouts/Base.astro';
           <li>Advanced analytics</li>
           <li>Priority support</li>
         </ul>
-        <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large plan-cta">Start Free Trial</a>
+        <a
+          href="https://budget.simplesuite.dev"
+          class="btn btn-primary btn-large plan-cta">Start Free Trial</a
+        >
       </div>
     </div>
   </section>
 
-  <section class="product-pricing">
-    <h2>📝 simpleTracker</h2>
+  <section class="product-pricing tracker-section">
+    <h2 class="product-pricing-title">
+      <Image
+        src={trackerLogo}
+        alt="simpleTracker logo"
+        width={32}
+        height={32}
+        class="pricing-logo"
+      /><span>simple<strong>Tracker</strong></span>
+    </h2>
     <div class="pricing-grid">
       <div class="plan-card">
         <div class="plan-header">
@@ -71,11 +99,14 @@ import Base from '../layouts/Base.astro';
           <li>Full offline support</li>
           <li>PWA — install on any device</li>
         </ul>
-        <a href="https://tracker.simplesuite.dev" class="btn btn-secondary btn-large plan-cta">Get Started</a>
+        <a
+          href="https://tracker.simplesuite.dev"
+          class="btn btn-secondary btn-large plan-cta">Get Started</a
+        >
       </div>
 
-      <div class="plan-card featured">
-        <div class="plan-badge">Pro</div>
+      <div class="plan-card featured tracker-featured">
+        <div class="plan-badge tracker-badge">Pro</div>
         <div class="plan-header">
           <h3>Pro</h3>
           <div class="plan-price">
@@ -89,7 +120,10 @@ import Base from '../layouts/Base.astro';
           <li>Export to CSV</li>
           <li>Priority support</li>
         </ul>
-        <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large plan-cta">Start Free Trial</a>
+        <a
+          href="https://tracker.simplesuite.dev"
+          class="btn btn-tracker btn-large plan-cta">Start Free Trial</a
+        >
       </div>
     </div>
   </section>
@@ -99,23 +133,38 @@ import Base from '../layouts/Base.astro';
     <div class="faq-grid">
       <div class="faq-item">
         <h4>Can I cancel anytime?</h4>
-        <p>Yes. Cancel from your settings page and you'll keep Pro access until the end of your billing period.</p>
+        <p>
+          Yes. Cancel from your settings page and you'll keep Pro access until
+          the end of your billing period.
+        </p>
       </div>
       <div class="faq-item">
         <h4>Is there a free trial?</h4>
-        <p>Pro comes with a 14-day free trial on every app. No credit card required to start.</p>
+        <p>
+          Pro comes with a 14-day free trial on every app. No credit card
+          required to start.
+        </p>
       </div>
       <div class="faq-item">
         <h4>What happens to my data if I downgrade?</h4>
-        <p>Your data is never deleted. You'll keep read access to everything but some features may be limited on the free plan.</p>
+        <p>
+          Your data is never deleted. You'll keep read access to everything but
+          some features may be limited on the free plan.
+        </p>
       </div>
       <div class="faq-item">
         <h4>Do you offer annual billing?</h4>
-        <p>Yes — annual plans save 25%. You can switch to annual from your settings at any time.</p>
+        <p>
+          Yes — annual plans save 25%. You can switch to annual from your
+          settings at any time.
+        </p>
       </div>
       <div class="faq-item">
         <h4>Is there a bundle discount?</h4>
-        <p>Not yet — each app is priced and billed independently. We may offer bundle pricing as the suite grows.</p>
+        <p>
+          Not yet — each app is priced and billed independently. We may offer
+          bundle pricing as the suite grows.
+        </p>
       </div>
     </div>
   </section>
@@ -146,6 +195,21 @@ import Base from '../layouts/Base.astro';
   .product-pricing h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .product-pricing-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+  }
+
+  .product-pricing-title strong {
+    font-weight: 700;
+  }
+
+  .pricing-logo {
+    border-radius: 8px;
   }
 
   .pricing-grid {
@@ -223,7 +287,7 @@ import Base from '../layouts/Base.astro';
   }
 
   .plan-features li::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--color-primary);
@@ -233,6 +297,30 @@ import Base from '../layouts/Base.astro';
   .plan-cta {
     text-align: center;
     display: block;
+  }
+
+  .btn-tracker {
+    background: var(--color-tracker);
+    color: #000;
+  }
+
+  .btn-tracker:hover {
+    background: var(--color-tracker-hover);
+    color: #000;
+  }
+
+  .plan-card.tracker-featured {
+    border-color: var(--color-tracker);
+    box-shadow: 0 0 40px rgba(215, 154, 0, 0.15);
+  }
+
+  .tracker-badge {
+    background: var(--color-tracker) !important;
+    color: #000 !important;
+  }
+
+  .tracker-section .plan-features li::before {
+    color: var(--color-tracker);
   }
 
   .faq {

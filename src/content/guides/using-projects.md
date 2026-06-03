@@ -1,0 +1,49 @@
+---
+title: Organizing with Projects
+description: Group related notes and tasks into projects and share them with collaborators.
+product: simpletracker
+category: features
+order: 5
+---
+
+Projects in simpleTracker let you group related notes and tasks together — great for separating work from personal items or organizing by topic.
+
+## Creating a Project
+
+1. Navigate to the **Projects** tab
+2. Tap the **+** button
+3. Give your project a name and optional description
+4. Start adding notes and tasks to it
+
+## Adding Items to a Project
+
+When creating or editing a note or task, you can assign it to a project. Items can only belong to one project at a time, but you can reassign them freely.
+
+From the project detail view, you'll see all notes and tasks that belong to it in one place.
+
+## Sharing a Project
+
+Sharing a project gives another user access to everything inside it:
+
+1. Open the project
+2. Tap the share option
+3. Select a user from your contacts (added via QR code scanning)
+
+All notes and tasks within a shared project sync in real time. Both collaborators can add, edit, and complete items.
+
+## QR Code Contact Exchange
+
+To share projects (or individual notes), you first need to exchange user IDs:
+
+1. Go to your **Settings** or sharing screen
+2. Show your QR code to the other person
+3. They scan it with their camera or the in-app scanner
+4. You're now connected — you can share projects and notes with each other
+
+This is a one-time setup per person. Once connected, sharing is instant.
+
+## Tips
+
+- Use projects to separate concerns: "Work", "Personal", "Shopping", etc.
+- Shared projects require an internet connection to sync — they bypass the offline queue
+- Project descriptions are great for jotting down the purpose or context of a group of items

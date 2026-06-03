@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
+import budgetLogo from '../../assets/simplebudget.png';
+import trackerLogo from '../../assets/simpleTracker.png';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -17,7 +20,20 @@ const { Content } = await render(guide);
 <Base title={`${guide.data.title} — simpleSuite`} description={guide.data.description}>
   <article class="guide">
     <a href="/guides" class="back-link">← All Guides</a>
-    <span class="guide-product">{guide.data.product === 'simplebudget' ? '💰 simpleBudget' : guide.data.product === 'simpletracker' ? '⏱️ simpleTracker' : '📚 General'}</span>
+    <div class="guide-product-badge">
+      {guide.data.product === 'simplebudget' && (
+        <Image src={budgetLogo} alt="" width={20} height={20} class="guide-product-logo" />
+        <span class="guide-product-name budget" set:html="simple<strong>Budget</strong>"></span>
+      )}
+      {guide.data.product === 'simpletracker' && (
+        <Image src={trackerLogo} alt="" width={20} height={20} class="guide-product-logo" />
+        <span class="guide-product-name tracker" set:html="simple<strong>Tracker</strong>"></span>
+      )}
+      {guide.data.product === 'general' && (
+        <span class="guide-product-emoji">📚</span>
+        <span class="guide-product-name">General</span>
+      )}
+    </div>
     <h1>{guide.data.title}</h1>
     <div class="guide-content">
       <Content />
@@ -43,14 +59,39 @@ const { Content } = await render(guide);
     color: var(--color-primary);
   }
 
-  .guide-product {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--color-primary);
-    font-weight: 600;
+  .guide-product-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .guide-product-logo {
+    border-radius: 4px;
+  }
+
+  .guide-product-emoji {
+    font-size: 1rem;
+  }
+
+  .guide-product-name {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-bottom: 0.5rem;
+  }
+
+  .guide-product-name strong {
+    font-weight: 700;
+  }
+
+  .guide-product-name.budget {
+    color: var(--color-primary);
+  }
+
+  .guide-product-name.tracker {
+    color: var(--color-tracker);
   }
 
   .guide h1 {

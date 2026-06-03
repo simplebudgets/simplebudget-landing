@@ -1,46 +1,104 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import budgetLogo from "../../assets/simplebudget.png";
+import trackerLogo from "../../assets/simpleTracker.png";
 
-const allGuides = await getCollection('guides');
+const allGuides = await getCollection("guides");
 
 const categories = [
-  { key: 'getting-started', label: 'Getting Started' },
-  { key: 'install', label: 'Install the App' },
-  { key: 'features', label: 'Features & How-Tos' },
+  { key: "getting-started", label: "Getting Started" },
+  { key: "install", label: "Install the App" },
+  { key: "features", label: "Features & How-Tos" },
 ] as const;
 
-const grouped = categories.map(cat => ({
-  ...cat,
-  guides: allGuides
-    .filter(g => g.data.category === cat.key)
-    .sort((a, b) => a.data.order - b.data.order),
-}));
+const products = [
+  { key: "general", label: "General", icon: "📚" },
+  { key: "simplebudget", label: "simpleBudget", icon: "budget" },
+  { key: "simpletracker", label: "simpleTracker", icon: "tracker" },
+] as const;
+
+const grouped = products
+  .map((product) => ({
+    ...product,
+    categories: categories
+      .map((cat) => ({
+        ...cat,
+        guides: allGuides
+          .filter(
+            (g) =>
+              g.data.product === product.key && g.data.category === cat.key,
+          )
+          .sort((a, b) => a.data.order - b.data.order),
+      }))
+      .filter((cat) => cat.guides.length > 0),
+  }))
+  .filter((product) => product.categories.length > 0);
 ---
 
-<Base title="Guides — simpleSuite" description="Learn how to get the most out of simpleSuite apps with step-by-step guides.">
+<Base
+  title="Guides — simpleSuite"
+  description="Learn how to get the most out of simpleSuite apps with step-by-step guides."
+>
   <section class="guides-hero">
     <h1>Guides</h1>
     <p>Step-by-step help for all simpleSuite apps.</p>
   </section>
 
   <section class="guides-list">
-    {grouped.map(group => (
-      group.guides.length > 0 && (
-        <div class="guide-group">
-          <h2>{group.label}</h2>
-          <div class="guide-cards">
-            {group.guides.map(guide => (
-              <a href={`/guides/${guide.id}`} class="guide-card">
-                <span class="guide-product">{guide.data.product === 'simplebudget' ? '💰 simpleBudget' : guide.data.product === 'simpletracker' ? '⏱️ simpleTracker' : '📚 General'}</span>
-                <h3>{guide.data.title}</h3>
-                <p>{guide.data.description}</p>
-              </a>
-            ))}
+    {
+      grouped.map((product) => (
+        <div class={`product-section ${product.key}`}>
+          <div class="product-section-header">
+            {product.icon === "budget" && (
+              <Image
+                src={budgetLogo}
+                alt=""
+                width={28}
+                height={28}
+                class="product-section-logo"
+              />
+            )}
+            {product.icon === "tracker" && (
+              <Image
+                src={trackerLogo}
+                alt=""
+                width={28}
+                height={28}
+                class="product-section-logo"
+              />
+            )}
+            {product.icon === "📚" && (
+              <span class="product-section-emoji">📚</span>
+            )}
+            <h2
+              set:html={
+                product.key === "simplebudget"
+                  ? "simple<strong>Budget</strong>"
+                  : product.key === "simpletracker"
+                    ? "simple<strong>Tracker</strong>"
+                    : "General"
+              }
+            />
           </div>
+
+          {product.categories.map((cat) => (
+            <div class="guide-category">
+              <h3>{cat.label}</h3>
+              <div class="guide-cards">
+                {cat.guides.map((guide) => (
+                  <a href={`/guides/${guide.id}`} class="guide-card">
+                    <h4>{guide.data.title}</h4>
+                    <p>{guide.data.description}</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      )
-    ))}
+      ))
+    }
   </section>
 </Base>
 
@@ -64,13 +122,62 @@ const grouped = categories.map(cat => ({
     padding-bottom: 4rem;
   }
 
-  .guide-group {
-    margin-bottom: 2.5rem;
+  .product-section {
+    margin-bottom: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .guide-group h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+  .product-section:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .product-section-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-section-header :global(img) {
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .product-section-emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .product-section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .product-section-header h2 :global(strong) {
+    font-weight: 700;
+  }
+
+  .product-section.simpletracker .product-section-header h2 {
+    color: var(--color-text);
+  }
+
+  .product-section.simplebudget .product-section-header h2 {
+    color: var(--color-text);
+  }
+
+  .guide-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .guide-category h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -88,26 +195,26 @@ const grouped = categories.map(cat => ({
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius);
     padding: 1.5rem;
-    transition: border-color 0.2s, transform 0.1s;
+    transition:
+      border-color 0.2s,
+      transform 0.1s;
     display: block;
   }
 
   .guide-card:hover {
-    border-color: var(--color-primary);
+    border-color: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
   }
 
-  .guide-product {
-    font-size: 0.75rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    display: block;
-    margin-bottom: 0.5rem;
+  .product-section.simplebudget .guide-card:hover {
+    border-color: var(--color-primary);
   }
 
-  .guide-card h3 {
+  .product-section.simpletracker .guide-card:hover {
+    border-color: var(--color-tracker);
+  }
+
+  .guide-card h4 {
     font-size: 1.05rem;
     margin-bottom: 0.4rem;
     color: var(--color-text);
