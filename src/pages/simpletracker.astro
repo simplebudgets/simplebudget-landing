@@ -1,16 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import trackerLogo from '../assets/simpleTracker.png';
 ---
 
 <Base title="simpleTracker — Notes, Tasks & Projects Made Simple" description="Manage notes with Markdown, track tasks with subtasks and due dates, and organize everything into projects. Offline-first and mobile-ready.">
   <section class="product-hero">
-    <div class="product-icon">📝</div>
+    <Image src={trackerLogo} alt="simpleTracker logo" width={72} height={72} class="product-logo" />
     <h1>Notes, tasks & projects<br />without the bloat</h1>
     <p class="hero-sub">
       A simple, mobile-first productivity app for managing notes, tasks, and projects. Full offline support, Markdown editing, and real-time sharing.
     </p>
     <div class="hero-cta">
-      <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large">Open simpleTracker</a>
+      <a href="https://tracker.simplesuite.dev" class="btn btn-tracker btn-large">Open simple<strong>Tracker</strong></a>
       <a href="https://github.com/simplesuite/simpletracker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">View on GitHub</a>
     </div>
   </section>
@@ -83,7 +85,7 @@ import Base from '../layouts/Base.astro';
 
   <section class="offline-section">
     <h2>Offline-first, for real</h2>
-    <p class="section-sub">simpleTracker doesn't just cache a page — it has a full offline architecture.</p>
+    <p class="section-sub">simple<strong>Tracker</strong> doesn't just cache a page — it has a full offline architecture.</p>
     <div class="offline-grid">
       <div class="offline-card">
         <h4>IndexedDB Mutation Queue</h4>
@@ -173,20 +175,30 @@ import Base from '../layouts/Base.astro';
     <h2>Ready to get organized?</h2>
     <p>Free to start, no credit card required.</p>
     <div class="cta-buttons">
-      <a href="https://tracker.simplesuite.dev" class="btn btn-primary btn-large">Open simpleTracker</a>
+      <a href="https://tracker.simplesuite.dev" class="btn btn-tracker btn-large">Open simple<strong>Tracker</strong></a>
       <a href="/pricing" class="btn btn-secondary btn-large">See Pricing</a>
     </div>
   </section>
 </Base>
 
 <style>
+  .btn-tracker {
+    background: var(--color-tracker);
+    color: #000;
+  }
+
+  .btn-tracker:hover {
+    background: var(--color-tracker-hover);
+    color: #000;
+  }
+
   .product-hero {
     text-align: center;
     padding: 5rem 0 4rem;
   }
 
-  .product-hero .product-icon {
-    font-size: 3.5rem;
+  .product-hero .product-logo {
+    border-radius: 16px;
     margin-bottom: 1.5rem;
   }
 
@@ -233,7 +245,7 @@ import Base from '../layouts/Base.astro';
     font-size: 1.35rem;
     margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(215, 154, 0, 0.3);
   }
 
   .features-grid {
@@ -251,7 +263,7 @@ import Base from '../layouts/Base.astro';
   }
 
   .feature-card:hover {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--color-tracker);
   }
 
   .feature-card h4 {

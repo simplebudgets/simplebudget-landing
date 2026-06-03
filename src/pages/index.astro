@@ -1,15 +1,20 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import budgetLogo from "../assets/simplebudget.png";
+import trackerLogo from "../assets/simpleTracker.png";
 ---
 
 <Base title="simpleSuite — Simple Tools for Everyday Life">
   <section class="hero">
     <h1>Simple tools for<br />everyday life</h1>
     <p class="hero-sub">
-      A growing suite of apps designed to do one thing well — and stay out of your way. Manage your money. Organize your tasks. More to come.
+      A growing suite of apps designed to do one thing well — and stay out of
+      your way. Manage your money. Organize your tasks. More to come.
     </p>
     <div class="hero-cta">
-      <a href="#products" class="btn btn-primary btn-large">Explore Products</a>
+      <a href="#products" class="btn btn-gradient btn-large">Explore Products</a
+      >
       <a href="/pricing" class="btn btn-secondary btn-large">See Pricing</a>
     </div>
   </section>
@@ -18,10 +23,19 @@ import Base from '../layouts/Base.astro';
     <h2>The Suite</h2>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-icon">💰</div>
-        <h3>simpleBudget</h3>
+        <Image
+          src={budgetLogo}
+          alt="simpleBudget logo"
+          width={48}
+          height={48}
+          class="product-card-logo"
+        />
+        <h3>simple<strong>Budget</strong></h3>
         <p class="product-tagline">Budgeting made simple</p>
-        <p>Plan your month, track your spending, and see where your money goes — all in one clean interface. No spreadsheets, no complexity.</p>
+        <p>
+          Plan your month, track your spending, and see where your money goes —
+          all in one clean interface. No spreadsheets, no complexity.
+        </p>
         <ul class="product-highlights">
           <li>Plan income & expenses by category</li>
           <li>Track transactions in real time</li>
@@ -29,14 +43,28 @@ import Base from '../layouts/Base.astro';
           <li>Visual spending analytics</li>
           <li>Works offline as a PWA</li>
         </ul>
-        <a href="https://budget.simplesuite.dev" class="btn btn-primary">Open simpleBudget →</a>
+        <div class="product-card-actions">
+          <a href="https://budget.simplesuite.dev" class="btn btn-primary"
+            >Open App →</a
+          >
+          <a href="/simplebudget" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
 
-      <div class="product-card">
-        <div class="product-icon">📝</div>
-        <h3>simpleTracker</h3>
+      <div class="product-card tracker">
+        <Image
+          src={trackerLogo}
+          alt="simpleTracker logo"
+          width={48}
+          height={48}
+          class="product-card-logo"
+        />
+        <h3>simple<strong>Tracker</strong></h3>
         <p class="product-tagline">Notes, tasks & projects made simple</p>
-        <p>Manage notes with Markdown, track tasks with subtasks and due dates, and organize everything into projects. Offline-first and mobile-ready.</p>
+        <p>
+          Manage notes with Markdown, track tasks with subtasks and due dates,
+          and organize everything into projects. Offline-first and mobile-ready.
+        </p>
         <ul class="product-highlights">
           <li>Markdown notes with live preview</li>
           <li>Tasks with subtasks, due dates & recurrence</li>
@@ -44,7 +72,12 @@ import Base from '../layouts/Base.astro';
           <li>Share notes & projects with others</li>
           <li>Full offline support as a PWA</li>
         </ul>
-        <a href="https://tracker.simplesuite.dev" class="btn btn-primary">Open simpleTracker →</a>
+        <div class="product-card-actions">
+          <a href="https://tracker.simplesuite.dev" class="btn btn-tracker"
+            >Open App →</a
+          >
+          <a href="/simpletracker" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
   </section>
@@ -55,32 +88,51 @@ import Base from '../layouts/Base.astro';
       <div class="value-card">
         <div class="value-icon">🎯</div>
         <h3>One job, done well</h3>
-        <p>Each app solves one problem without feature creep. If it doesn't earn its place, it doesn't ship.</p>
+        <p>
+          Each app solves one problem without feature creep. If it doesn't earn
+          its place, it doesn't ship.
+        </p>
       </div>
       <div class="value-card">
         <div class="value-icon">📱</div>
         <h3>Works everywhere</h3>
-        <p>Install as a PWA on any device or use in any browser. Your data is always with you — even offline.</p>
+        <p>
+          Install as a PWA on any device or use in any browser. Your data is
+          always with you — even offline.
+        </p>
       </div>
       <div class="value-card">
         <div class="value-icon">🔒</div>
         <h3>Private & secure</h3>
-        <p>Your data is never sold or shared. We make money from subscriptions, not from you.</p>
+        <p>
+          Your data is never sold or shared. We make money from subscriptions,
+          not from you.
+        </p>
       </div>
       <div class="value-card">
         <div class="value-icon">⚡</div>
         <h3>Fast & lightweight</h3>
-        <p>No bloat. Each app loads fast, runs smooth, and respects your time.</p>
+        <p>
+          No bloat. Each app loads fast, runs smooth, and respects your time.
+        </p>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <h2>Ready to simplify?</h2>
-    <p>Pick a tool and get started in under 2 minutes. Free plans available for everything.</p>
+    <p>
+      Pick a tool and get started in under 2 minutes. Free plans available for
+      everything.
+    </p>
     <div class="cta-buttons">
-      <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large">Try simpleBudget</a>
-      <a href="https://tracker.simplesuite.dev" class="btn btn-secondary btn-large">Try simpleTracker</a>
+      <a href="https://budget.simplesuite.dev" class="btn btn-primary btn-large"
+        >Try simple<strong>Budget</strong></a
+      >
+      <a
+        href="https://tracker.simplesuite.dev"
+        class="btn btn-tracker btn-large">Try simple<strong>Tracker</strong></a
+      >
     </div>
   </section>
 </Base>
@@ -140,14 +192,19 @@ import Base from '../layouts/Base.astro';
     flex-direction: column;
   }
 
-  .product-icon {
-    font-size: 2.5rem;
+  .product-card-logo {
+    border-radius: 12px;
     margin-bottom: 1rem;
   }
 
   .product-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  .product-card h3 strong {
+    font-weight: 700;
   }
 
   .product-tagline {
@@ -181,7 +238,7 @@ import Base from '../layouts/Base.astro';
   }
 
   .product-highlights li::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--color-primary);
@@ -190,7 +247,48 @@ import Base from '../layouts/Base.astro';
 
   .product-card .btn {
     text-align: center;
-    align-self: flex-start;
+  }
+
+  .product-card-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  .btn-tracker {
+    background: var(--color-tracker);
+    color: #000;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-tracker)
+    );
+    color: #fff;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-hover),
+      var(--color-tracker-hover)
+    );
+    color: #fff;
+  }
+
+  .btn-tracker:hover {
+    background: var(--color-tracker-hover);
+    color: #000;
+  }
+
+  .product-card.tracker .product-tagline {
+    color: var(--color-tracker);
+  }
+
+  .product-card.tracker .product-highlights li::before {
+    color: var(--color-tracker);
   }
 
   .values {

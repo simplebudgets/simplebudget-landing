@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+import budgetLogo from "../assets/simplebudget.png";
+import trackerLogo from "../assets/simpleTracker.png";
 
 interface Props {
   title: string;
@@ -35,17 +37,48 @@ const {
         >
         <div class="nav-links">
           <div class="nav-dropdown">
-            <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-              Products <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            <button
+              class="nav-dropdown-trigger"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Products <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="currentColor"
+                aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg
+              >
             </button>
             <div class="nav-dropdown-menu" role="menu">
-              <a href="/simplebudget" role="menuitem">
-                <strong>simpleBudget</strong>
-                <span>Budgeting made simple</span>
+              <a href="/simplebudget" role="menuitem" class="dropdown-item">
+                <Image
+                  src={budgetLogo}
+                  alt=""
+                  width={24}
+                  height={24}
+                  class="dropdown-logo"
+                />
+                <div>
+                  <span class="product-name">simple<strong>Budget</strong></span
+                  >
+                  <span>Budgeting made simple</span>
+                </div>
               </a>
-              <a href="/simpletracker" role="menuitem">
-                <strong>simpleTracker</strong>
-                <span>Notes, tasks & projects made simple</span>
+              <a href="/simpletracker" role="menuitem" class="dropdown-item">
+                <Image
+                  src={trackerLogo}
+                  alt=""
+                  width={24}
+                  height={24}
+                  class="dropdown-logo"
+                />
+                <div>
+                  <span class="product-name"
+                    >simple<strong>Tracker</strong></span
+                  >
+                  <span>Notes, tasks & projects made simple</span>
+                </div>
               </a>
             </div>
           </div>
@@ -93,8 +126,8 @@ const {
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="/simplebudget">simpleBudget</a>
-          <a href="/simpletracker">simpleTracker</a>
+          <a href="/simplebudget">simple<strong>Budget</strong></a>
+          <a href="/simpletracker">simple<strong>Tracker</strong></a>
         </div>
         <div class="footer-col">
           <h4>Resources</h4>
@@ -120,6 +153,9 @@ const {
 <style is:global>
   :root {
     --color-primary: #4c809e;
+    --color-primary-hover: #5a93b3;
+    --color-tracker: #d79a00;
+    --color-tracker-hover: #e5ad1a;
     --color-secondary: #d6a058;
     --color-bg: #0f1117;
     --color-surface: #1a1d27;
@@ -241,10 +277,12 @@ const {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
     padding: 0.5rem;
-    min-width: 220px;
+    min-width: 250px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.15s, transform 0.15s;
+    transition:
+      opacity 0.15s,
+      transform 0.15s;
     transform: translateX(-50%) translateY(-4px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
@@ -261,7 +299,9 @@ const {
   }
 
   .nav-dropdown-menu a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 8px;
     transition: background 0.15s;
@@ -272,14 +312,30 @@ const {
   }
 
   .nav-dropdown-menu a strong {
-    display: block;
     font-size: 0.95rem;
     color: var(--color-text);
   }
 
+  .product-name strong {
+    font-weight: 700;
+  }
+
+  .dropdown-logo {
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
   .nav-dropdown-menu a span {
+    display: block;
     font-size: 0.8rem;
     color: var(--color-text-muted);
+  }
+
+  .nav-dropdown-menu a span.product-name {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-weight: 400;
+    white-space: nowrap;
   }
 
   .btn {
@@ -304,6 +360,16 @@ const {
   .btn-primary:hover {
     background: #5a93b3;
     color: #fff;
+  }
+
+  .btn-tracker {
+    background: var(--color-tracker);
+    color: #000;
+  }
+
+  .btn-tracker:hover {
+    background: var(--color-tracker-hover);
+    color: #000;
   }
 
   .btn-secondary {
