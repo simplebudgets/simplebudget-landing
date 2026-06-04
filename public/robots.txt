@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://simplebudget.com/sitemap-index.xml
+Sitemap: https://simplesuite.dev/sitemap-index.xml
