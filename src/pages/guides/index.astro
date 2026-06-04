@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import budgetLogo from "../../assets/simplebudget.png";
 import trackerLogo from "../../assets/simpleTracker.png";
+import suiteLogo from "../../assets/logo.png";
 
 const allGuides = await getCollection("guides");
 
@@ -70,7 +71,13 @@ const grouped = products
               />
             )}
             {product.icon === "📚" && (
-              <span class="product-section-emoji">📚</span>
+              <Image
+                src={suiteLogo}
+                alt=""
+                width={28}
+                height={28}
+                class="product-section-logo"
+              />
             )}
             <h2
               set:html={
