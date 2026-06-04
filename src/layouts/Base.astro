@@ -7,12 +7,27 @@ import trackerLogo from "../assets/simpleTracker.png";
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
   title,
   description = "Simple, beautiful tools to manage your money and your tasks. simpleBudget and simpleTracker — part of the simpleSuite family.",
+  ogImage = "/android-chrome-192x192.png",
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "simpleSuite",
+  url: "https://simplesuite.dev",
+  logo: "https://simplesuite.dev/android-chrome-192x192.png",
+  description:
+    "Simple, beautiful tools to manage your money and your tasks. simpleBudget and simpleTracker — part of the simpleSuite family.",
+  sameAs: ["https://github.com/simplesuite"],
+};
 ---
 
 <!doctype html>
@@ -22,6 +37,31 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:site_name" content="simpleSuite" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+
     <title>{title}</title>
   </head>
   <body>
