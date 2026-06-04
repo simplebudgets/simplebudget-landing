@@ -75,6 +75,26 @@ const structuredData = {
             height={32}
           /><span>simple<strong>Suite</strong></span></a
         >
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
         <div class="nav-links">
           <div class="nav-dropdown">
             <button
@@ -143,6 +163,18 @@ const structuredData = {
               ></path></svg
             >
           </a>
+        </div>
+        <div class="mobile-menu" aria-hidden="true">
+          <a href="/simplebudget">simple<strong>Budget</strong></a>
+          <a href="/simpletracker">simple<strong>Tracker</strong></a>
+          <a href="/pricing">Pricing</a>
+          <a href="/guides">Guides</a>
+          <a href="/about">About</a>
+          <a
+            href="https://github.com/simplesuite"
+            target="_blank"
+            rel="noopener noreferrer">GitHub</a
+          >
         </div>
       </nav>
     </header>
@@ -244,6 +276,7 @@ const structuredData = {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
 
   .logo {
@@ -325,6 +358,15 @@ const structuredData = {
       transform 0.15s;
     transform: translateX(-50%) translateY(-4px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -0.75rem;
+    left: 0;
+    right: 0;
+    height: 0.75rem;
   }
 
   .nav-dropdown:hover .nav-dropdown-menu,
@@ -487,6 +529,59 @@ const structuredData = {
     font-size: 0.85rem;
   }
 
+  /* Mobile menu toggle */
+  .mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu-toggle:hover {
+    color: var(--color-text);
+  }
+
+  /* Mobile menu panel */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 99;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: var(--color-text-muted);
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--color-text);
+  }
+
   @media (max-width: 768px) {
     .nav-links {
       gap: 1rem;
@@ -499,12 +594,12 @@ const structuredData = {
   }
 
   @media (max-width: 480px) {
-    .nav-links > a:not(.btn):not(.nav-github) {
+    .nav-links {
       display: none;
     }
 
-    .nav-dropdown {
-      display: none;
+    .mobile-menu-toggle {
+      display: flex;
     }
 
     .footer-grid {
@@ -512,3 +607,16 @@ const structuredData = {
     }
   }
 </style>
+
+<script>
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const menu = document.querySelector(".mobile-menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      menu.setAttribute("aria-hidden", String(!isOpen));
+    });
+  }
+</script>

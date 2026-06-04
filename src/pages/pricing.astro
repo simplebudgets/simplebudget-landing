@@ -53,7 +53,7 @@ import trackerLogo from "../assets/simpleTracker.png";
         <div class="plan-header">
           <h3>Pro</h3>
           <div class="plan-price">
-            <span class="price">$4</span>
+            <span class="price">$5</span>
             <span class="period">/month</span>
           </div>
         </div>
@@ -65,7 +65,7 @@ import trackerLogo from "../assets/simpleTracker.png";
         </ul>
         <a
           href="https://budget.simplesuite.dev"
-          class="btn btn-primary btn-large plan-cta">Start Free Trial</a
+          class="btn btn-primary btn-large plan-cta">Upgrade to Pro</a
         >
       </div>
     </div>
@@ -110,7 +110,7 @@ import trackerLogo from "../assets/simpleTracker.png";
         <div class="plan-header">
           <h3>Pro</h3>
           <div class="plan-price">
-            <span class="price">$4</span>
+            <span class="price">$5</span>
             <span class="period">/month</span>
           </div>
         </div>
@@ -122,8 +122,22 @@ import trackerLogo from "../assets/simpleTracker.png";
         </ul>
         <a
           href="https://tracker.simplesuite.dev"
-          class="btn btn-tracker btn-large plan-cta">Start Free Trial</a
+          class="btn btn-tracker btn-large plan-cta">Upgrade to Pro</a
         >
+      </div>
+    </div>
+  </section>
+
+  <section class="self-host-banner">
+    <div class="self-host-content">
+      <span class="self-host-icon">🖥️</span>
+      <div>
+        <h3>Self-host? It's all free.</h3>
+        <p>
+          Run your own backend and unlock every feature at no cost — no limits,
+          no subscriptions. The pricing above only applies to our managed hosted
+          service.
+        </p>
       </div>
     </div>
   </section>
@@ -141,8 +155,8 @@ import trackerLogo from "../assets/simpleTracker.png";
       <div class="faq-item">
         <h4>Is there a free trial?</h4>
         <p>
-          Pro comes with a 14-day free trial on every app. No credit card
-          required to start.
+          Not at the moment, but the free tier lets you explore the core
+          features before deciding to upgrade.
         </p>
       </div>
       <div class="faq-item">
@@ -155,8 +169,8 @@ import trackerLogo from "../assets/simpleTracker.png";
       <div class="faq-item">
         <h4>Do you offer annual billing?</h4>
         <p>
-          Yes — annual plans save 25%. You can switch to annual from your
-          settings at any time.
+          Not yet — right now all plans are billed monthly. Annual billing may
+          be offered in the future.
         </p>
       </div>
       <div class="faq-item">
@@ -185,6 +199,43 @@ import trackerLogo from "../assets/simpleTracker.png";
     margin-top: 0.75rem;
     color: var(--color-text-muted);
     font-size: 1.15rem;
+  }
+
+  .self-host-banner {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(
+      135deg,
+      rgba(76, 128, 158, 0.12),
+      rgba(215, 154, 0, 0.08)
+    );
+    border: 1px solid rgba(76, 128, 158, 0.3);
+    border-radius: var(--radius);
+  }
+
+  .self-host-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .self-host-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .self-host-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .self-host-content p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .product-pricing {
