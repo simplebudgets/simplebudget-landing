@@ -6,6 +6,12 @@ category: features
 order: 2
 ---
 
+import { Image } from 'astro:assets';
+import editCategory from '../../assets/screenshots/simplebudget/edit_category.png';
+import editCategoryHelpers from '../../assets/screenshots/simplebudget/edit_category_helpers.png';
+import viewCategoryExpense from '../../assets/screenshots/simplebudget/view_category_expense.png';
+import viewCategoryIncome from '../../assets/screenshots/simplebudget/vew_category_income.png';
+
 Your budget is organized into **sections** and **categories**:
 
 - **Sections** are groups (e.g., "Housing", "Food", "Transportation")
@@ -29,11 +35,26 @@ Income sections appear at the top of your budget. Expense sections are sorted by
 4. Set the budgeted amount (you can always change this later)
 5. Tap **Add**
 
+## Viewing categories
+
+Tap any category to see its details. The view differs slightly depending on whether it's an income or expense category:
+
+<div class="guide-screenshot-row">
+  <Image src={viewCategoryIncome} alt="Viewing an income category with budgeted and actual amounts" width={300} class="guide-screenshot" />
+  <Image src={viewCategoryExpense} alt="Viewing an expense category with budgeted, spent, and remaining amounts" width={300} class="guide-screenshot" />
+</div>
+
 ## Editing sections and categories
 
 - **Tap a section name** to rename it or change its type
 - **Tap a category** to change its name or budgeted amount
 - On desktop, selecting a category opens a detail sidebar with quick edit options
+
+<Image src={editCategory} alt="Editing a category name and budgeted amount" width={300} class="guide-screenshot" />
+
+The edit screen also includes helper options for managing your category:
+
+<Image src={editCategoryHelpers} alt="Category edit helpers including move and delete options" width={300} class="guide-screenshot" />
 
 ## Deleting
 

@@ -155,4 +155,27 @@ const { Content } = await render(guide);
     border-radius: 4px;
     font-size: 0.9em;
   }
+
+  .guide-content :global(.guide-screenshot) {
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+  }
+
+  .guide-content :global(.guide-screenshot-row) {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+
+  .guide-content :global(.guide-screenshot-row .guide-screenshot) {
+    margin: 0;
+  }
 </style>
