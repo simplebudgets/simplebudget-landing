@@ -6,15 +6,25 @@ category: features
 order: 1
 ---
 
+import { Image } from 'astro:assets';
+import sharingInput from '../../assets/screenshots/simplebudget/sharing_input.png';
+import sharingQrCode from '../../assets/screenshots/simplebudget/sharing_qr_code.png';
+
 Sharing lets another simpleBudget user view and edit your budget. Great for couples, roommates, or anyone managing money together.
 
 ## How to share
 
 1. Open the **Settings** page (gear icon in the bottom nav)
 2. Tap **Share Budget**
-3. Scan you QR code of the person you want to share with (they must already have a simpleBudget account)
-- to find this QR code, they need to go to **Settings** and tap **Show My QR Code**
-- if you can't scan their QR Code, have them send you their user id (found on the QR Code page) and you can enter it manually.
+3. Scan the QR code of the person you want to share with (they must already have a simpleBudget account)
+
+<Image src={sharingQrCode} alt="QR code screen for sharing a budget with another user" width={300} class="guide-screenshot" />
+
+- To find this QR code, they need to go to **Settings** and tap **Show My QR Code**
+- If you can't scan their QR Code, have them send you their user id (found on the QR Code page) and you can enter it manually:
+
+<Image src={sharingInput} alt="Manual user ID input for sharing a budget" width={300} class="guide-screenshot" />
+
 4. Tap **Share**
 
 The other person will see your budget appear in their budget selector next time they open the app.

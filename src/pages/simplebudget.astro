@@ -2,6 +2,14 @@
 import Base from '../layouts/Base.astro';
 import { Image } from 'astro:assets';
 import budgetLogo from '../assets/simplebudget.png';
+import budgetPage from '../assets/screenshots/simplebudget/budget_page.png';
+import transactionsPage from '../assets/screenshots/simplebudget/transactions_page.png';
+import transactionsSearch from '../assets/screenshots/simplebudget/transactions_search.png';
+import analyticsBudgetVSpent from '../assets/screenshots/simplebudget/analytics_budget_v_spent.png';
+import analyticsExpenseDist from '../assets/screenshots/simplebudget/analytics_expense_dist.png';
+import analyticsIncomeDist from '../assets/screenshots/simplebudget/analytics_income_dist.png';
+import sharingQrCode from '../assets/screenshots/simplebudget/sharing_qr_code.png';
+import exportCsv from '../assets/screenshots/simplebudget/export_csv.png';
 ---
 
 <Base title="simpleBudget — Budgeting Made Simple" description="Plan your month, track your spending, and see where your money goes. A simple, mobile-first budget app.">
@@ -79,6 +87,45 @@ import budgetLogo from '../assets/simplebudget.png';
         <div class="feature-icon">🔒</div>
         <h3>Private & Secure</h3>
         <p>Row-level security in Supabase means only you (and people you share with) can access your budget data. We never sell your info.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2>See it in action</h2>
+    <p class="screenshots-sub">A clean, mobile-first interface designed for quick daily use.</p>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <Image src={budgetPage} alt="Budget page showing income and expense sections with remaining balances" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Budget overview</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={transactionsPage} alt="Transactions list showing recent expenses with categories" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Transactions</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={transactionsSearch} alt="Searching and filtering transactions" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Search & filter</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={analyticsBudgetVSpent} alt="Analytics chart comparing budgeted amounts versus actual spending" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Budget vs. spent</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={analyticsExpenseDist} alt="Pie chart showing expense distribution across categories" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Expense breakdown</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={analyticsIncomeDist} alt="Pie chart showing income distribution across categories" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Income breakdown</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={sharingQrCode} alt="QR code screen for sharing a budget with another user" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Share via QR</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={exportCsv} alt="CSV export options for downloading budget data" width={280} class="screenshot-img" />
+        <span class="screenshot-label">CSV export</span>
       </div>
     </div>
   </section>
@@ -211,6 +258,53 @@ import budgetLogo from '../assets/simplebudget.png';
     color: var(--color-text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .screenshots {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .screenshots h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .screenshots-sub {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .screenshot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .screenshot-img {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .screenshot-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
   }
 
   .how-it-works {

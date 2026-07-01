@@ -6,6 +6,10 @@ category: getting-started
 order: 1
 ---
 
+import { Image } from 'astro:assets';
+import budgetPage from '../../assets/screenshots/simplebudget/budget_page.png';
+import transactionsPage from '../../assets/screenshots/simplebudget/transactions_page.png';
+
 Getting started with simpleBudget takes about 2 minutes. Here's the full walkthrough.
 
 ## 1. Create your account
@@ -38,6 +42,8 @@ Now you're on the Budget page for the current month:
 
 The summary at the top shows your planned income vs. planned expenses. Aim for the difference to be $0 or positive.
 
+<Image src={budgetPage} alt="Budget page showing sections and categories with budgeted amounts" width={300} class="guide-screenshot" />
+
 ## 4. Start tracking
 
 As you spend money throughout the month:
@@ -45,6 +51,8 @@ As you spend money throughout the month:
 1. Tap the **+** button (bottom of screen on mobile, or "Add Transaction" on desktop)
 2. Enter the amount, pick a category, and add a short description
 3. The budget page updates in real time to show how much you have left in each category
+
+<Image src={transactionsPage} alt="Transactions page showing logged expenses and income" width={300} class="guide-screenshot" />
 
 ## Tips for your first month
 
