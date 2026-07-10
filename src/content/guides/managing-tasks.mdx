@@ -6,6 +6,12 @@ category: features
 order: 4
 ---
 
+import { Image } from 'astro:assets';
+import tasksPage from '../../assets/screenshots/simpletracker/taskspage.png';
+import taskDetails from '../../assets/screenshots/simpletracker/taskdetails.png';
+import taskRecurring from '../../assets/screenshots/simpletracker/taskdetails_recurring_completed.png';
+import tasksFilterProject from '../../assets/screenshots/simpletracker/taskspage_filt_projectchip.png';
+
 Tasks in simpleTracker are designed for things you need to do — with subtasks, due dates, and optional recurrence to keep you on track.
 
 ## Creating a Task
@@ -16,6 +22,8 @@ Tasks in simpleTracker are designed for things you need to do — with subtasks,
 4. Set a **due date** if it has a deadline
 5. Assign it to a **project** if relevant
 
+<Image src={tasksPage} alt="Tasks page showing a list of tasks with due date indicators" width={300} class="guide-screenshot" />
+
 ## Adding Subtasks
 
 Break larger tasks into smaller steps:
@@ -24,6 +32,8 @@ Break larger tasks into smaller steps:
 2. Add subtasks (up to 50 per task)
 3. Check off subtasks as you complete them
 4. The parent task shows progress based on subtask completion
+
+<Image src={taskDetails} alt="Task detail view with subtasks, due date, and project assignment" width={300} class="guide-screenshot" />
 
 ## Due Dates
 
@@ -45,6 +55,10 @@ For tasks that repeat on a schedule:
 
 When you complete a recurring task, a new instance is automatically created based on your settings.
 
+<Image src={taskRecurring} alt="Recurring task showing completion and next occurrence details" width={300} class="guide-screenshot" />
+
 ## Searching and Filtering
 
-Use the search bar at the top of the Tasks tab to find tasks by title. Filter by completion status to focus on active work or review what you've accomplished.
+Use the search bar at the top of the Tasks tab to find tasks by title. Filter by project to focus on a specific area of work:
+
+<Image src={tasksFilterProject} alt="Tasks page filtered by project" width={300} class="guide-screenshot" />

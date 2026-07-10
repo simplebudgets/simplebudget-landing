@@ -6,6 +6,11 @@ category: features
 order: 5
 ---
 
+import { Image } from 'astro:assets';
+import projectsPage from '../../assets/screenshots/simpletracker/projectspage.png';
+import projectDetails from '../../assets/screenshots/simpletracker/projectdetails.png';
+import settings from '../../assets/screenshots/simpletracker/settings.png';
+
 Projects in simpleTracker let you group related notes and tasks together — great for separating work from personal items or organizing by topic.
 
 ## Creating a Project
@@ -15,11 +20,15 @@ Projects in simpleTracker let you group related notes and tasks together — gre
 3. Give your project a name and optional description
 4. Start adding notes and tasks to it
 
+<Image src={projectsPage} alt="Projects page showing a list of projects" width={300} class="guide-screenshot" />
+
 ## Adding Items to a Project
 
 When creating or editing a note or task, you can assign it to a project. Items can only belong to one project at a time, but you can reassign them freely.
 
 From the project detail view, you'll see all notes and tasks that belong to it in one place.
+
+<Image src={projectDetails} alt="Project detail view showing notes and tasks within the project" width={300} class="guide-screenshot" />
 
 ## Sharing a Project
 
@@ -39,6 +48,8 @@ To share projects (or individual notes), you first need to exchange user IDs:
 2. Show your QR code to the other person
 3. They scan it with their camera or the in-app scanner
 4. You're now connected — you can share projects and notes with each other
+
+<Image src={settings} alt="Settings page with QR code and sharing options" width={300} class="guide-screenshot" />
 
 This is a one-time setup per person. Once connected, sharing is instant.
 

@@ -2,6 +2,15 @@
 import Base from '../layouts/Base.astro';
 import { Image } from 'astro:assets';
 import trackerLogo from '../assets/simpleTracker.png';
+import notesPage from '../assets/screenshots/simpletracker/notespage.png';
+import noteDetailsNote from '../assets/screenshots/simpletracker/notedetails_note.png';
+import noteDetailsList from '../assets/screenshots/simpletracker/notedetails_list.png';
+import tasksPage from '../assets/screenshots/simpletracker/taskspage.png';
+import taskDetails from '../assets/screenshots/simpletracker/taskdetails.png';
+import taskRecurring from '../assets/screenshots/simpletracker/taskdetails_recurring_completed.png';
+import projectsPage from '../assets/screenshots/simpletracker/projectspage.png';
+import projectDetails from '../assets/screenshots/simpletracker/projectdetails.png';
+import settings from '../assets/screenshots/simpletracker/settings.png';
 ---
 
 <Base title="simpleTracker — Notes, Tasks & Projects Made Simple" description="Manage notes with Markdown, track tasks with subtasks and due dates, and organize everything into projects. Offline-first and mobile-ready.">
@@ -79,6 +88,49 @@ import trackerLogo from '../assets/simpleTracker.png';
           <h4>QR Code Sharing</h4>
           <p>Exchange user IDs via QR code scanning — no need to type email addresses. Point, scan, share.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2>See it in action</h2>
+    <p class="screenshots-sub">A clean, mobile-first interface for notes, tasks, and projects.</p>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <Image src={notesPage} alt="Notes page showing a list of pinned and recent notes" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Notes</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={noteDetailsNote} alt="Text note with Markdown content and live preview" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Markdown note</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={noteDetailsList} alt="List note with checkable items" width={280} class="screenshot-img" />
+        <span class="screenshot-label">List note</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={tasksPage} alt="Tasks page showing tasks with due date indicators" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Tasks</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={taskDetails} alt="Task detail view with subtasks and due date" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Task details</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={taskRecurring} alt="Recurring task with completion and next occurrence" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Recurring tasks</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={projectsPage} alt="Projects page showing project list" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Projects</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={projectDetails} alt="Project detail view with grouped notes and tasks" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Project details</span>
+      </div>
+      <div class="screenshot-item">
+        <Image src={settings} alt="Settings page with QR code sharing and preferences" width={280} class="screenshot-img" />
+        <span class="screenshot-label">Settings & sharing</span>
       </div>
     </div>
   </section>
@@ -275,6 +327,53 @@ import trackerLogo from '../assets/simpleTracker.png';
     color: var(--color-text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .screenshots {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .screenshots h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .screenshots-sub {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .screenshot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .screenshot-img {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .screenshot-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
   }
 
   .offline-section {
