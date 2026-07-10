@@ -103,6 +103,18 @@ const grouped = products
               </div>
             </div>
           ))}
+
+          {product.key === "general" && (
+            <div class="guide-category">
+              <h3>Self-Hosting</h3>
+              <div class="guide-cards">
+                <a href="https://github.com/simplesuite/simplesuite-selfhost" target="_blank" rel="noopener noreferrer" class="guide-card">
+                  <h4>Self-Host Guide ↗</h4>
+                  <p>Run your own backend and unlock every feature at no cost. Full setup instructions on GitHub.</p>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       ))
     }

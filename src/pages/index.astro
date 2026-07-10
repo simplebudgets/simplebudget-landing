@@ -3,6 +3,8 @@ import Base from "../layouts/Base.astro";
 import { Image } from "astro:assets";
 import budgetLogo from "../assets/simplebudget.png";
 import trackerLogo from "../assets/simpleTracker.png";
+import budgetScreenshot from "../assets/screenshots/simplebudget/budget_page.png";
+import trackerScreenshot from "../assets/screenshots/simpletracker/projectdetails.png";
 ---
 
 <Base title="simpleSuite — Simple Tools for Everyday Life">
@@ -11,6 +13,9 @@ import trackerLogo from "../assets/simpleTracker.png";
     <p class="hero-sub">
       A growing suite of apps designed to do one thing well — and stay out of
       your way. Manage your money. Organize your tasks. More to come.
+    </p>
+    <p class="hero-sub">
+      All apps are fully <a href="https://github.com/simplesuite/simplesuite-selfhost" target="_blank" rel="noopener noreferrer" class="self-host-link">self-host friendly</a>
     </p>
     <div class="hero-cta">
       <a href="#products" class="btn btn-gradient btn-large">Explore Products</a
@@ -23,60 +28,80 @@ import trackerLogo from "../assets/simpleTracker.png";
     <h2>The Suite</h2>
     <div class="product-grid">
       <div class="product-card">
-        <Image
-          src={budgetLogo}
-          alt="simpleBudget logo"
-          width={48}
-          height={48}
-          class="product-card-logo"
-        />
-        <h3>simple<strong>Budget</strong></h3>
-        <p class="product-tagline">Budgeting made simple</p>
-        <p>
-          Plan your month, track your spending, and see where your money goes —
-          all in one clean interface. No spreadsheets, no complexity.
-        </p>
-        <ul class="product-highlights">
-          <li>Plan income & expenses by category</li>
-          <li>Track transactions in real time</li>
-          <li>Share budgets with a partner</li>
-          <li>Visual spending analytics</li>
-          <li>Works offline as a PWA</li>
-        </ul>
-        <div class="product-card-actions">
-          <a href="https://budget.simplesuite.dev" class="btn btn-primary"
-            >Open App →</a
-          >
-          <a href="/simplebudget" class="btn btn-secondary">Read More</a>
+        <div class="product-card-content">
+          <Image
+            src={budgetLogo}
+            alt="simpleBudget logo"
+            width={48}
+            height={48}
+            class="product-card-logo"
+          />
+          <h3>simple<strong>Budget</strong></h3>
+          <p class="product-tagline">Budgeting made simple</p>
+          <p>
+            Plan your month, track your spending, and see where your money goes —
+            all in one clean interface. No spreadsheets, no complexity.
+          </p>
+          <ul class="product-highlights">
+            <li>Plan income & expenses by category</li>
+            <li>Track transactions in real time</li>
+            <li>Share budgets with a partner</li>
+            <li>Visual spending analytics</li>
+            <li>Works offline as a PWA</li>
+          </ul>
+          <div class="product-card-actions">
+            <a href="https://budget.simplesuite.dev" class="btn btn-primary"
+              >Open App →</a
+            >
+            <a href="/simplebudget" class="btn btn-secondary">Read More</a>
+          </div>
+        </div>
+        <div class="product-card-preview">
+          <Image
+            src={budgetScreenshot}
+            alt="simpleBudget budget page showing income and expense categories"
+            width={280}
+            class="product-card-screenshot"
+          />
         </div>
       </div>
 
       <div class="product-card tracker">
-        <Image
-          src={trackerLogo}
-          alt="simpleTracker logo"
-          width={48}
-          height={48}
-          class="product-card-logo"
-        />
-        <h3>simple<strong>Tracker</strong></h3>
-        <p class="product-tagline">Notes, tasks & projects made simple</p>
-        <p>
-          Manage notes with Markdown, track tasks with subtasks and due dates,
-          and organize everything into projects. Offline-first and mobile-ready.
-        </p>
-        <ul class="product-highlights">
-          <li>Markdown notes with live preview</li>
-          <li>Tasks with subtasks, due dates & recurrence</li>
-          <li>Organize into projects</li>
-          <li>Share notes & projects with others</li>
-          <li>Full offline support as a PWA</li>
-        </ul>
-        <div class="product-card-actions">
-          <a href="https://tracker.simplesuite.dev" class="btn btn-tracker"
-            >Open App →</a
-          >
-          <a href="/simpletracker" class="btn btn-secondary">Read More</a>
+        <div class="product-card-content">
+          <Image
+            src={trackerLogo}
+            alt="simpleTracker logo"
+            width={48}
+            height={48}
+            class="product-card-logo"
+          />
+          <h3>simple<strong>Tracker</strong></h3>
+          <p class="product-tagline">Notes, tasks & projects made simple</p>
+          <p>
+            Manage notes with Markdown, track tasks with subtasks and due dates,
+            and organize everything into projects. Offline-first and mobile-ready.
+          </p>
+          <ul class="product-highlights">
+            <li>Markdown notes with live preview</li>
+            <li>Tasks with subtasks, due dates & recurrence</li>
+            <li>Organize into projects</li>
+            <li>Share notes & projects with others</li>
+            <li>Full offline support as a PWA</li>
+          </ul>
+          <div class="product-card-actions">
+            <a href="https://tracker.simplesuite.dev" class="btn btn-tracker"
+              >Open App →</a
+            >
+            <a href="/simpletracker" class="btn btn-secondary">Read More</a>
+          </div>
+        </div>
+        <div class="product-card-preview">
+          <Image
+            src={trackerScreenshot}
+            alt="simpleTracker project detail view with notes and tasks"
+            width={280}
+            class="product-card-screenshot"
+          />
         </div>
       </div>
     </div>
@@ -159,6 +184,17 @@ import trackerLogo from "../assets/simpleTracker.png";
     margin-right: auto;
   }
 
+  .self-host-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+
+  .self-host-link:hover {
+    color: var(--color-primary-hover);
+  }
+
   .hero-cta {
     margin-top: 2.5rem;
     display: flex;
@@ -179,7 +215,7 @@ import trackerLogo from "../assets/simpleTracker.png";
 
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -190,6 +226,19 @@ import trackerLogo from "../assets/simpleTracker.png";
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .product-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-card-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .product-card-logo {
@@ -214,7 +263,7 @@ import trackerLogo from "../assets/simpleTracker.png";
     margin-bottom: 1rem;
   }
 
-  .product-card > p:not(.product-tagline) {
+  .product-card-content > p:not(.product-tagline) {
     color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -247,6 +296,27 @@ import trackerLogo from "../assets/simpleTracker.png";
 
   .product-card .btn {
     text-align: center;
+  }
+
+  .product-card-screenshot {
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .product-card {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .product-card-preview {
+      flex-shrink: 0;
+    }
   }
 
   .product-card-actions {

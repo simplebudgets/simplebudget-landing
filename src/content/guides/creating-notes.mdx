@@ -6,6 +6,13 @@ category: getting-started
 order: 2
 ---
 
+import { Image } from 'astro:assets';
+import notesPage from '../../assets/screenshots/simpletracker/notespage.png';
+import noteDetailsNote from '../../assets/screenshots/simpletracker/notedetails_note.png';
+import noteDetailsList from '../../assets/screenshots/simpletracker/notedetails_list.png';
+import notesFilterSearch from '../../assets/screenshots/simpletracker/notespage_filt_searchbar.png';
+import notesFilterProject from '../../assets/screenshots/simpletracker/notespage_filt_projectchip.png';
+
 Notes in simpleTracker come in two types: **text notes** (freeform Markdown) and **list notes** (checklists). Here's how to use both.
 
 ## Creating a Note
@@ -15,6 +22,8 @@ Notes in simpleTracker come in two types: **text notes** (freeform Markdown) and
 3. Choose your note type:
    - **Text** — freeform writing with full Markdown support
    - **List** — a checklist of items you can mark complete
+
+<Image src={notesPage} alt="Notes page showing a list of text and list notes" width={300} class="guide-screenshot" />
 
 ## Writing with Markdown
 
@@ -27,11 +36,24 @@ Text notes support full Markdown including:
 
 The formatting toolbar gives you quick access to common styles, or you can type Markdown syntax directly. A live preview shows how your note will look.
 
+<Image src={noteDetailsNote} alt="Text note with Markdown editing and preview" width={300} class="guide-screenshot" />
+
+List notes work as simple checklists — tap items to mark them complete:
+
+<Image src={noteDetailsList} alt="List note with checkable items" width={300} class="guide-screenshot" />
+
 ## Organizing Notes
 
 - **Pin** important notes to keep them at the top of your list
 - **Archive** old notes you don't need day-to-day (they're still accessible, just hidden from the main view)
 - **Assign to a project** to group related notes together
+
+Use the search bar to find notes quickly, or filter by project:
+
+<div class="guide-screenshot-row">
+  <Image src={notesFilterSearch} alt="Notes page filtered by search term" width={300} class="guide-screenshot" />
+  <Image src={notesFilterProject} alt="Notes page filtered by project" width={300} class="guide-screenshot" />
+</div>
 
 ## Sharing Notes
 
